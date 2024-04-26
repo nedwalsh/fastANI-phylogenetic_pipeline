@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --mem=16G
 #SBATCH --time=0:40:00
-#SBATCH --account=OD-226706
+#SBATCH --account=OD-########
 target_script1="$1"
 target_script2="$2"
 temp="temp/"
