@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --mem=32G
 #SBATCH --time=0:30:00
-#SBATCH --account=OD-226706
+#SBATCH --account=OD-######
 
 target_dir="$1"
 
