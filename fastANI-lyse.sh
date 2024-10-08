@@ -21,8 +21,8 @@ for i in "$source_dir"*; do
 
 name="$(dirname "${BASH_SOURCE[0]}")"
 
-if [ "$num" -gt 50]; then
-        ${name}src/run_split_analysis.sh $source_dir
+if [ "$num" -gt 50 ]; then
+        ${name}/src/run_split_analysis.sh $source_dir
 else
-        ${name}src/fastANI_pipeline.q $source_dir
+        ${name}/src/fastANI_pipeline.q $source_dir
 fi
