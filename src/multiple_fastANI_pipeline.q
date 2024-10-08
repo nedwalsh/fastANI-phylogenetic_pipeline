@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #SBATCH --job-name=FastAni
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
