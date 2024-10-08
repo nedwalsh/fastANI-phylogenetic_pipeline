@@ -7,7 +7,7 @@ if [ ! -n "$(find "$source_dir" -maxdepth 1 -type f)" ]; then
     exit 1
 fi
 
-temp="temp/"
+temp=".temp/"
 if [ ! -d "$temp" ]; then
     mkdir "$temp"
 fi
