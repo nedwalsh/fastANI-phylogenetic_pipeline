@@ -22,7 +22,9 @@ for i in "$source_dir"*; do
 name="$(dirname "${BASH_SOURCE[0]}")"
 
 if [ "$num" -gt 50 ]; then
+        chmod +x ${name}/src/run_split_analysis.sh
         ${name}/src/run_split_analysis.sh $source_dir
 else
+        chmod +x ${name}/src/fastANI_pipeline.q
         ${name}/src/fastANI_pipeline.q $source_dir
 fi
