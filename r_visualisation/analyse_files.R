@@ -1,3 +1,13 @@
+# Install and load the pvclust package
+install.packages("pvclust")
+install.packages("dendextend")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+  install.packages("BiocManager")
+## BiocManager::install("BiocUpgrade") ## you may need this
+BiocManager::install("treeio", force =TRUE)
+BiocManager::install("ggtree")
+BiocManager::install("ggtreeDendro")
+
 library(dplyr)
 library(ape)
 library(tidyverse)
