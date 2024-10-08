@@ -26,4 +26,33 @@ When you are creating a new project which will be an alignment against certain g
     ---->|....
 ```
 
-The first bit is complicated because of the computability issue. you want to run the analysis with over 100 >genomes, its best to split these analysis into separate files.
+To use the package you need to clone the repo from github:
+
+```
+git clone https://github.com/nedwalsh/fastANI-phylogenetic_pipeline.git
+```
+
+Make sure that the file has the correct permissions to run:
+
+```
+chmod +x fastANI-phylogenetic_pipeline/fastANI-lyse.sh
+```
+
+Then run it:
+
+```
+fastANI-phylogenetic_pipeline/fastANI-lyse.sh Genomes/
+```
+
+In the output folder you should have two files to use for the downstream analysis:
+
+```
+| Output
+---|final_fastani_dist.tsv
+---|species_info.csv
+```
+
+Now you can run the analysis on your ANI distance output using the ```analyse_files.R``` located in the ```r_visualisation``` folder. You don't need to adjust the script at all, just run in RStudio or through the CLI.
+
+The output from this will be ```treedata.csv``` which you can then visualise however you wish in Rstudio using the ```ggtree``` package.
+I have included an example visualisation in the ```r_visualisation``` folder called ```Dendrogram_visualisation.R```.
