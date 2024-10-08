@@ -6,7 +6,7 @@ source_dir_basename=$(basename "$source_dir")
 
 file_size=50
 
-dest_base_dir="temp/subset/"
+dest_base_dir=".temp/subset/"
 echo $dest_base_dir
 if [ ! -d "$dest_base_dir" ]; then
         mkdir "$dest_base_dir"
