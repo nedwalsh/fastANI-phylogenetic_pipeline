@@ -2,6 +2,7 @@
 module load fastani
 # module load mash
 source_dir="$1"
+pathdir="$2"
 source_dir_basename=$(basename "$source_dir")
 
 file_size=50
