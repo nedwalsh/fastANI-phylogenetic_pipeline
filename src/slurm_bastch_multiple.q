@@ -4,16 +4,10 @@
 #SBATCH --mem=16G
 #SBATCH --time=0:40:00
 #SBATCH --account=OD-########
+
 target_script1="$1"
 target_script2="$2"
-temp="temp/"
-if [ ! -d "$temp" ]; then
-    mkdir "$temp"
-fi
-output="output/"
-if [ ! -d "$output" ]; then
-    mkdir "$output"
-fi
+
 outname1=$(basename "$target_script1")
 outname2=$(basename "$target_script2")
 output_basename1="${outname1%.*}"
