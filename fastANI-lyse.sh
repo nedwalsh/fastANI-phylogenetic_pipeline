@@ -16,7 +16,7 @@ if [ ! -d "$output" ]; then
     mkdir "$output"
 fi
 
-for i in "$source_dir/*"; do 
+for i in "$source_dir"*; do 
     echo "$(basename $i | cut -d"_" -f1-2),$(head -n 1 $i | cut -d"," -f1 | cut -d" " -f2-3)"; done > output/species_info.csv
 
 if [ "$num" -gt 50]; then
