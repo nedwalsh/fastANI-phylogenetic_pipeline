@@ -42,3 +42,6 @@ output="output/${source_dir_basename}_ANI_distances.tsv"
 for file in "${dest_base_dir}"*; do
         cat "$file" >> "$output"
 done
+
+nohup "$0" "$@" &
+exit
