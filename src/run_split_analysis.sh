@@ -2,21 +2,14 @@
 module load fastani
 # module load mash
 source_dir="$1"
-file_size="$2"
-dest_base_dir="scripts_fastani/subset/"
+file_size=50
+
+dest_base_dir="temp/subset/"
 echo $dest_base_dir
 if [ ! -d "$dest_base_dir" ]; then
         mkdir "$dest_base_dir"
 fi
-slurmout="slurmout/"
-if [ ! -d "$slurmout" ]; then
-        mkdir "$slurmout"
-fi
-#break script
-if [ ! -n "$(find "$source_dir" -maxdepth 1 -type f)" ]; then
-    echo "Source directory is empty."
-    exit 1
-fi
+
 file_count=0
 dir_count=1
 # Loop through the files in the source directory
