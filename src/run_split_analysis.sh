@@ -28,21 +28,13 @@ for file in "$source_dir"*; do
                 >"$dest_path"
     fi
 done
-echo "Files moved successfully."
+
+output="output/final_fastani_dist.tsv"
+>$output
+
 for query_1 in "${dest_base_dir}"*; do
         for query_2 in "${dest_base_dir}"*; do
                 echo "sbatch multiple_fastANI_pipeline.q $query_1 $query_2"
                 sbatch ${pathdir}/src/multiple_fastANI_pipeline.q $query_1 $query_2
         done
 done
-
-sleep 50m
-
-output="output/${source_dir_basename}_ANI_distances.tsv"
->$output
-for file in "${dest_base_dir}"*; do
-        cat "$file" >> "$output"
-done
-
-nohup "$0" "$@" &
-exit
