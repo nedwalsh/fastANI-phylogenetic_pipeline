@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec > /dev/null 2>&1
+exec > info.txt 2>&1
 
 source_dir="$1"
 
