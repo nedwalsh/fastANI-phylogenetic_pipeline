@@ -17,7 +17,7 @@ if [ ! -d "$output" ]; then
 fi
 
 for i in "$source_dir"*; do 
-    echo "$(basename $i | cut -d"_" -f1-2),$(head -n 1 $i | cut -d"," -f1 | cut -d" " -f2-3)"; done > output/species_info.csv
+    echo "$(basename $i | cut -d"_" -f1-2),$(head -n 1 $i | cut -d"," -f1 | cut -d" " -f2-5)"; done > output/species_info.csv
 
 name="$(dirname "${BASH_SOURCE[0]}")"
 
