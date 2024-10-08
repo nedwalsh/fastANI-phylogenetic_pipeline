@@ -8,6 +8,8 @@
 target_script1="$1"
 target_script2="$2"
 
+temp=".temp/"
+
 outname1=$(basename "$target_script1")
 outname2=$(basename "$target_script2")
 output_basename1="${outname1%.*}"
