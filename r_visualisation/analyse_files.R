@@ -7,10 +7,8 @@ library(ggtree)
 library(tidytree)
 library(ggtreeDendro)
 
-list.files()
-
 species_data = read.csv("species_info.csv" , header = FALSE)
-fastaniout <- read.delim("MH191_10_Proximal_Clades_fastani_edited.tsv", header = FALSE) %>% select(1:5)
+fastaniout <- read.delim("final_fastani_dist.tsv", header = FALSE) %>% select(1:5)
 
 feature_name <- c('Species_1','Species_2','ANI','query_seqs','matched_seqs')
 
