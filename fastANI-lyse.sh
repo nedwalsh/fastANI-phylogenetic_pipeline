@@ -1,7 +1,5 @@
 #!/bin/bash
 
-exec > info.txt 2>&1
-
 source_dir="$1"
 
 num=$(find $source_dir -type f | wc -l)
