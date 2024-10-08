@@ -1,13 +1,3 @@
-# Install and load the pvclust package
-install.packages("pvclust")
-install.packages("dendextend")
-if (!requireNamespace("BiocManager", quietly=TRUE))
-  install.packages("BiocManager")
-## BiocManager::install("BiocUpgrade") ## you may need this
-BiocManager::install("treeio", force =TRUE)
-BiocManager::install("ggtree")
-BiocManager::install("ggtreeDendro")
-
 library(pvclust)
 library(dplyr)
 library(ape)
@@ -15,11 +5,6 @@ library(treeio)
 library(ggtree)
 library(tidytree)
 library(ggtreeDendro)
-
-help(pvclust)
-
-setwd("//fs1-cbr.nexus.csiro.au/{af-mosh-phylo}/work/SCRATCH3OUT/output")
-getwd()
 
 mytree <- read.delim("treedata.csv", sep=",")
 
