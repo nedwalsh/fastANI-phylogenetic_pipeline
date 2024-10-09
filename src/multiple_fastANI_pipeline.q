@@ -9,10 +9,11 @@
 
 target_script1="$1"
 target_script2="$2"
+folderName="$3"
 
 temp=".temp/"
-output="output/"
-direc=$( dirname "$output")
+output="output/${folderName}"
+
 
 outname1=$(basename "$target_script1")
 outname2=$(basename "$target_script2")
@@ -22,7 +23,7 @@ output_basename2="${outname2%.*}"
 echo $output_basename1
 echo $output_basename2
 module load fastani
-fastani_outname="${temp}${output_basename1}${output_basename2}_fastANI.out"
+fastani_outname="${temp}${folderName}${output_basename1}${output_basename2}_fastANI.out"
 echo
 fastANI --ql $target_script1 --rl $target_script2 -o $fastani_outname
 final_outname="${output}final_fastani_dist.tsv"
