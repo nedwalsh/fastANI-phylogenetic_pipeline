@@ -16,7 +16,7 @@ if [ ! -d ".temp/" ]; then
 fi
 
 if [ ! -d "output/" ]; then
-    mkdir "output/""
+    mkdir "output/"
 fi
 
 dnum=$(find $temp -type d | wc -l)
