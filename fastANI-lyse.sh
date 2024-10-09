@@ -19,9 +19,9 @@ if [ ! -d "output/" ]; then
     mkdir "output/"
 fi
 
-dnum=$(find $temp -type d | wc -l)
+dnum=$(find $output -type d | wc -l)
 
-output_basename=$(basename "$target_dir")
+output_basename=$(basename "$source_dir")
 folderName="${output_basename}_${dnum}/"
 
 output="output/${folderName}"
