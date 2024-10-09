@@ -43,6 +43,11 @@ In the line here:
 ```
 #SBATCH --account=OD-########
 ```
+You can do this quickly using nano:
+```
+nano fastANI-phylogenetic_pipeline/src/multiple_fastANI_pipeline.q
+nano fastANI-phylogenetic_pipeline/src/fastANI_pipeline.q
+```
 
 Then run it:
 
