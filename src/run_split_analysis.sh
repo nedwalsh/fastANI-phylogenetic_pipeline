@@ -2,15 +2,12 @@
 
 source_dir="$1"
 pathdir="$2"
+temp="$3"
+output="$4"
 
 file_size=50
 
-num=$(find $temp -type d | wc -l)
-
-output_basename=$(basename "$target_dir")
-folderName="${output_basename}${num}/"
-
-dest_base_dir=".temp/${folderName}subset/"
+dest_base_dir="${temp}subset/"
 echo $dest_base_dir
 if [ ! -d "$dest_base_dir" ]; then
         mkdir "$dest_base_dir"
@@ -32,12 +29,12 @@ for file in "$source_dir"*; do
     fi
 done
 
-output="output/${folderName}final_fastani_dist.tsv"
->$output
+fileoutput="${output}final_fastani_dist.tsv"
+>$fileoutput
 
 for query_1 in "${dest_base_dir}"*; do
         for query_2 in "${dest_base_dir}"*; do
-                echo "sbatch multiple_fastANI_pipeline.q $query_1 $query_2 $folderName"
-                sbatch ${pathdir}/src/multiple_fastANI_pipeline.q $query_1 $query_2 $folderName
+                echo "sbatch multiple_fastANI_pipeline.q $query_1 $query_2 $temp $output"
+                sbatch ${pathdir}/src/multiple_fastANI_pipeline.q $query_1 $query_2 $temp $output
         done
 done
