@@ -49,7 +49,7 @@ nano fastANI-phylogenetic_pipeline/src/multiple_fastANI_pipeline.q
 nano fastANI-phylogenetic_pipeline/src/fastANI_pipeline.q
 ```
 
-Then run it:
+Then run it using the Genomes folder as the first positional variable:
 
 ```
 fastANI-phylogenetic_pipeline/fastANI-lyse.sh Genomes/
