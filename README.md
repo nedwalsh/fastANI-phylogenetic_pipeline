@@ -56,3 +56,7 @@ Now you can run the analysis on your ANI distance output using the ```analyse_fi
 
 The output from this will be ```treedata.csv``` which you can then visualise however you wish in Rstudio using the ```ggtree``` package.
 I have included an example visualisation in the ```r_visualisation``` folder called ```Dendrogram_visualisation.R```.
+
+After that, you should get an output that looks like this. This graph was made using a subset of genomes described by Williams el al, 2022 (doi: 10.1038/s41467-022-32929-2).
+
+<img width="1500" alt="Rplot01" src="https://github.com/user-attachments/assets/756b17ab-aa8f-43ad-9712-56c7e9bc159f">
