@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #SBATCH --job-name=FastAni
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -9,25 +8,25 @@
 
 target_script1="$1"
 target_script2="$2"
-folderName="$3"
 
-temp=".temp/"
-output="output/${folderName}"
-
+temp="$3"
+output="$4"
 
 outname1=$(basename "$target_script1")
 outname2=$(basename "$target_script2")
 output_basename1="${outname1%.*}"
 output_basename2="${outname2%.*}"
-
 echo $output_basename1
 echo $output_basename2
+
 module load fastani
-fastani_outname="${temp}${folderName}${output_basename1}${output_basename2}_fastANI.out"
-echo
+fastani_outname="${temp}${output_basename1}${output_basename2}_fastANI.out"
+
 fastANI --ql $target_script1 --rl $target_script2 -o $fastani_outname
+
 final_outname="${output}final_fastani_dist.tsv"
 echo $final_outname
+
 while IFS=$'\t' read -r col1 col2 col3; do
     # Extract basenames using basename command
     basename1=$(basename "$col1" | sed 's/\.fna//' | cut -d'_' -f1,2)
