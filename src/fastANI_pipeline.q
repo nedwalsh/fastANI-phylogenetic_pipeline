@@ -8,17 +8,7 @@
 
 target_dir="$1"
 
-temp="${target_dir}temp"
-
-if [ ! -d "$temp" ]; then
-    mkdir "$temp"
-fi
-
-output_dir="${target_dir}output"
-
-if [ ! -d "$output_dir" ]; then
-    mkdir "$output_dir"
-fi
+temp=".temp/"
 
 output_basename=$(basename "$target_dir")
 gen_name_list="${target_dir}${temp}${output_basename}_genomepaths.txt"
