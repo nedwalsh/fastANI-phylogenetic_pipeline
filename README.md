@@ -38,6 +38,12 @@ Make sure that the file has the correct permissions to run:
 chmod +x fastANI-phylogenetic_pipeline/fastANI-lyse.sh
 ```
 
+IMPORTANT!! Please add the O2D number into the SLURM scripts in the src folder!!
+In the line here:
+```
+#SBATCH --account=OD-########
+```
+
 Then run it:
 
 ```
